@@ -57,7 +57,7 @@
 <?php
   include '../database_connection.php';
 
-  $api_key_value = "secure_api";
+  $api_key_value = "this_is_your_secure_key";
 
   if (!empty($_POST)) 
 	{
@@ -68,7 +68,7 @@
         {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = 'SELECT * FROM test_led_status WHERE ID=?';
+			$sql = 'SELECT * FROM table WHERE ID=?';
 
 			$q = $pdo->prepare($sql);
 			$q->execute(array($id));
@@ -87,7 +87,7 @@
 <?php
 	require '../database_connection.php';
 
-    $api_key_value = "secure_api";
+    $api_key_value = "this_is_your_secure_key";
 
 
     if (!empty($_POST)) 
@@ -101,7 +101,7 @@
                 // insert data
                  $pdo = Database::connect();
                  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                 $sql = 'UPDATE test_led_status SET Status = ? WHERE ID = 1';
+                 $sql = 'UPDATE table SET Status = ? WHERE ID = 1';
                  $q = $pdo->prepare($sql);
                  $q->execute(array($Stat));
                  Database::disconnect();
